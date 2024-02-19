@@ -1,0 +1,29 @@
+
+@mixin hideText {
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+@mixin displayNone {
+    display: none;
+}
+
+@mixin displayBlock {
+    display: block;
+}
+
+// 對齊
+@mixin margin0Auto {
+    margin: 0 auto;
+}
+
+// position
+@mixin positionRe {
+    position: relative;
+}
+
+@mixin positionAb {
+    position: absolute;
+}
+
