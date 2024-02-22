@@ -147,6 +147,10 @@ nav {
     }
 }
 
+main {
+    margin-bottom: 50px;
+}
+
 section {
     max-width: 1300px;
     background-color: white;
@@ -156,23 +160,203 @@ section {
 
 .clothingItem {
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 28px;
 
     figure {
-        border: 1px solid red;
+       
+        border: 1px solid #D3D3D3;
         border-radius: 10px;
-        position: relative;
-        overflow: hidden;        
-        height: 256px;
+        overflow: hidden;
         width: 256px;
+        height: 256px;
+        position: relative;
 
-        img {
+
+        .hamWrapper {
             position: absolute;
-            top: 7px;
-            right: 28px;
+            background-color: $color-accent;
+            border-radius: 50%;
+            width: 2.5rem;
+            height: 2.5rem;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 5;
+            transition: all .4s ease-in-out;
+
+
+            .ham {
+                cursor: pointer;
+
+                span {
+                    background-color: white;
+                    width: 20px;
+                    height: 2px;
+                    margin: 5px 0;
+                    display: block;
+                    transition: all .4s ease-in-out;
+                }
+
+                &.is-active span:nth-child(1) {
+                    transform: translateY(7px) rotate(45deg);
+                }
+
+                &.is-active span:nth-child(2) {
+                    opacity: 0;
+                    transform: rotate(45deg);
+                }
+
+                &.is-active span:nth-child(3) {
+                    transform: translateY(-7px) rotate(-45deg);
+                }
+            }
+
+            &.is-active {
+                top: 70px;
+                transition: all .4s ease-in-out;
+            }
         }
 
+        .item {
+            img {
+                position: absolute;
+                top: 25px;
+                right: -7px;
+            }
 
+            .hair {
+                position: absolute;
+            }
+
+            &.is-active {
+                display: none;
+            }
+        }
+
+        figcaption {
+            background-color: $color-primary;
+            position: absolute;
+            width: 100%;
+            padding: 8px;
+            padding-inline-start: 35px;
+            bottom: 0;
+            color: white;
+            font-weight: 400;
+
+            &.is-active {
+                animation:figMove .5s forwards;
+            }
+
+            @keyframes figMove {
+                0% {
+                    bottom: 0;
+                    opacity: 1;
+                }
+
+                100% {
+                    bottom: 100%;
+                    opacity: 0;
+                }
+            }
+        }
+
+        mark {
+            background: url('../img/iconStar.svg') no-repeat;
+            background-size: cover;
+            width: 13px;
+            height: 13px;
+            display: inline-block;
+            margin-left: 7px;
+        }
+
+        .title {
+            background-color: $color-primary;
+            position: absolute;
+            width: 100%;
+            color: white;
+            font-weight: 400;
+            top: 0;
+            bottom: auto;
+
+            // 先讓它消失
+            height: 0;
+            overflow: hidden;
+            padding: 0;
+
+            &.is-active {
+                opacity: 0;
+                height: auto;
+                padding: 9px;
+                animation: fadeIn .1s ease-in-out forwards;
+                animation-delay: .3s;
+                padding-inline-start: 35px; 
+            }
+
+            span {
+                margin-top: 2px;
+                display: block;
+                font-size: 15px;
+                color: #FFF6C9;
+            }
+
+            @keyframes fadeIn {
+                0% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .itemPic {
+            position: absolute;
+            right: calc(50% - 75px/2);
+            top: 93px;
+            opacity: 0;
+            z-index: 1;
+
+            &.is-active {
+                opacity: 100;
+            }
+        }
+
+        .from {
+            display: none;
+
+            .formLink {
+                margin-left: 15px;
+                display: flex;
+                gap: 10px;
+            }
+
+            a {
+                display: block;
+
+                :hover {
+                    transform: scale(1.2);
+                    transition: all .4s ease-out;
+                }
+            }
+
+            img {
+                position: static;
+            }
+
+            &.is-active {
+                margin-top: 80%;
+                display: flex;
+                align-items: center;
+                color: #8F6767;
+                padding: 10px 0;
+                padding-inline-start: 26px;
+                background-color: #FFF2F2;
+            }
+        }
     }
 }
 

@@ -18,7 +18,6 @@ a {
 }
 
 img {
-  max-width: 100%;
   height: auto;
   display: block;
 }
@@ -174,6 +173,10 @@ nav .list li:hover, nav .list li:active, nav .list li:focus {
   color: white;
 }
 
+main {
+  margin-bottom: 50px;
+}
+
 section {
   max-width: 1300px;
   background-color: white;
@@ -185,20 +188,216 @@ section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   gap: 28px;
 }
 .clothingItem figure {
-  border: 1px solid red;
+  border: 1px solid #D3D3D3;
   border-radius: 10px;
-  position: relative;
   overflow: hidden;
-  height: 256px;
   width: 256px;
+  height: 256px;
+  position: relative;
 }
-.clothingItem figure img {
+.clothingItem figure .hamWrapper {
   position: absolute;
-  top: 7px;
-  right: 28px;
+  background-color: #E9C9B2;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  top: 10px;
+  right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 5;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+.clothingItem figure .hamWrapper .ham {
+  cursor: pointer;
+}
+.clothingItem figure .hamWrapper .ham span {
+  background-color: white;
+  width: 20px;
+  height: 2px;
+  margin: 5px 0;
+  display: block;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+.clothingItem figure .hamWrapper .ham.is-active span:nth-child(1) {
+  -webkit-transform: translateY(7px) rotate(45deg);
+          transform: translateY(7px) rotate(45deg);
+}
+.clothingItem figure .hamWrapper .ham.is-active span:nth-child(2) {
+  opacity: 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.clothingItem figure .hamWrapper .ham.is-active span:nth-child(3) {
+  -webkit-transform: translateY(-7px) rotate(-45deg);
+          transform: translateY(-7px) rotate(-45deg);
+}
+.clothingItem figure .hamWrapper.is-active {
+  top: 70px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+.clothingItem figure .item img {
+  position: absolute;
+  top: 25px;
+  right: -7px;
+}
+.clothingItem figure .item .hair {
+  position: absolute;
+}
+.clothingItem figure .item.is-active {
+  display: none;
+}
+.clothingItem figure figcaption {
+  background-color: #FF9393;
+  position: absolute;
+  width: 100%;
+  padding: 8px;
+  -webkit-padding-start: 35px;
+          padding-inline-start: 35px;
+  bottom: 0;
+  color: white;
+  font-weight: 400;
+}
+.clothingItem figure figcaption.is-active {
+  -webkit-animation: figMove 0.5s forwards;
+          animation: figMove 0.5s forwards;
+}
+@-webkit-keyframes figMove {
+  0% {
+    bottom: 0;
+    opacity: 1;
+  }
+  100% {
+    bottom: 100%;
+    opacity: 0;
+  }
+}
+@keyframes figMove {
+  0% {
+    bottom: 0;
+    opacity: 1;
+  }
+  100% {
+    bottom: 100%;
+    opacity: 0;
+  }
+}
+.clothingItem figure mark {
+  background: url("../img/iconStar.svg") no-repeat;
+  background-size: cover;
+  width: 13px;
+  height: 13px;
+  display: inline-block;
+  margin-left: 7px;
+}
+.clothingItem figure .title {
+  background-color: #FF9393;
+  position: absolute;
+  width: 100%;
+  color: white;
+  font-weight: 400;
+  top: 0;
+  bottom: auto;
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+}
+.clothingItem figure .title.is-active {
+  opacity: 0;
+  height: auto;
+  padding: 9px;
+  -webkit-animation: fadeIn 0.1s ease-in-out forwards;
+          animation: fadeIn 0.1s ease-in-out forwards;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+  -webkit-padding-start: 35px;
+          padding-inline-start: 35px;
+}
+.clothingItem figure .title span {
+  margin-top: 2px;
+  display: block;
+  font-size: 15px;
+  color: #FFF6C9;
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.clothingItem figure .itemPic {
+  position: absolute;
+  right: calc(50% - 37.5px);
+  top: 93px;
+  opacity: 0;
+  z-index: 1;
+}
+.clothingItem figure .itemPic.is-active {
+  opacity: 100;
+}
+.clothingItem figure .from {
+  display: none;
+}
+.clothingItem figure .from .formLink {
+  margin-left: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+.clothingItem figure .from a {
+  display: block;
+}
+.clothingItem figure .from a :hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+.clothingItem figure .from img {
+  position: static;
+}
+.clothingItem figure .from.is-active {
+  margin-top: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #8F6767;
+  padding: 10px 0;
+  -webkit-padding-start: 26px;
+          padding-inline-start: 26px;
+  background-color: #FFF2F2;
 }
 
 footer {
