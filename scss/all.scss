@@ -191,7 +191,6 @@ section {
 
             .ham {
                 cursor: pointer;
-
                 span {
                     background-color: white;
                     width: 20px;
@@ -201,20 +200,20 @@ section {
                     transition: all .4s ease-in-out;
                 }
 
-                &.is-active span:nth-child(1) {
-                    transform: translateY(7px) rotate(45deg);
+                &.is-active {
+                    span:nth-child(1) {
+                        transform: translateY(7px) rotate(45deg);
+                    }
+                    span:nth-child(2) {
+                        opacity: 0;
+                        transform: rotate(45deg);
+                    }
+                    span:nth-child(3) {
+                        transform: translateY(-7px) rotate(-45deg);
+                    }
                 }
-
-                &.is-active span:nth-child(2) {
-                    opacity: 0;
-                    transform: rotate(45deg);
-                }
-
-                &.is-active span:nth-child(3) {
-                    transform: translateY(-7px) rotate(-45deg);
-                }
-            }
-
+            }   
+            
             &.is-active {
                 top: 70px;
                 transition: all .4s ease-in-out;
@@ -224,7 +223,7 @@ section {
         .item {
             img {
                 position: absolute;
-                top: 25px;
+                top: 7px;
                 right: -7px;
             }
 
@@ -321,7 +320,10 @@ section {
             z-index: 1;
 
             &.is-active {
-                opacity: 100;
+                height: auto;
+                animation: fadeIn .1s ease-in-out forwards;
+                animation-delay: .3s;
+                padding-inline-start: 35px; 
             }
         }
 

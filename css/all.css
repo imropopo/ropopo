@@ -256,7 +256,7 @@ section {
 }
 .clothingItem figure .item img {
   position: absolute;
-  top: 25px;
+  top: 7px;
   right: -7px;
 }
 .clothingItem figure .item .hair {
@@ -361,7 +361,13 @@ section {
   z-index: 1;
 }
 .clothingItem figure .itemPic.is-active {
-  opacity: 100;
+  height: auto;
+  -webkit-animation: fadeIn 0.1s ease-in-out forwards;
+          animation: fadeIn 0.1s ease-in-out forwards;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+  -webkit-padding-start: 35px;
+          padding-inline-start: 35px;
 }
 .clothingItem figure .from {
   display: none;
