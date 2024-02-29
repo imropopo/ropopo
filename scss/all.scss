@@ -118,12 +118,14 @@ header {
 nav {
     padding-top: 61px;
     display: flex;
+    justify-content: center;
     align-items: center;
-    margin-left: 272px;
     margin-bottom: 41px;
+    flex-wrap: wrap;
 
     .list {
         display: flex;
+        flex-wrap: wrap;
         font-size: 16px;
         gap: 10px;
 
@@ -134,10 +136,17 @@ nav {
             padding: 0.5em 1.5em;
             border-radius: 5px;
             cursor: pointer;
+            text-wrap: none;
 
             &:hover,
             &:active,
             &:focus {
+                background-color: $color-primary;
+                border: 1px solid $color-primary;
+                color: white;
+            }
+
+            &.selected {
                 background-color: $color-primary;
                 border: 1px solid $color-primary;
                 color: white;
@@ -165,7 +174,7 @@ section {
     gap: 28px;
 
     figure {
-       
+
         border: 1px solid #D3D3D3;
         border-radius: 10px;
         overflow: hidden;
@@ -191,6 +200,7 @@ section {
 
             .ham {
                 cursor: pointer;
+
                 span {
                     background-color: white;
                     width: 20px;
@@ -204,16 +214,18 @@ section {
                     span:nth-child(1) {
                         transform: translateY(7px) rotate(45deg);
                     }
+
                     span:nth-child(2) {
                         opacity: 0;
                         transform: rotate(45deg);
                     }
+
                     span:nth-child(3) {
                         transform: translateY(-7px) rotate(-45deg);
                     }
                 }
-            }   
-            
+            }
+
             &.is-active {
                 top: 70px;
                 transition: all .4s ease-in-out;
@@ -247,7 +259,7 @@ section {
             font-weight: 400;
 
             &.is-active {
-                animation:figMove .5s forwards;
+                animation: figMove .5s forwards;
             }
 
             @keyframes figMove {
@@ -292,7 +304,7 @@ section {
                 padding: 9px;
                 animation: fadeIn .1s ease-in-out forwards;
                 animation-delay: .3s;
-                padding-inline-start: 35px; 
+                padding-inline-start: 35px;
             }
 
             span {
@@ -306,6 +318,7 @@ section {
                 0% {
                     opacity: 0;
                 }
+
                 100% {
                     opacity: 1;
                 }
@@ -323,12 +336,14 @@ section {
                 height: auto;
                 animation: fadeIn .1s ease-in-out forwards;
                 animation-delay: .3s;
-                padding-inline-start: 35px; 
+                padding-inline-start: 35px;
             }
         }
 
         .from {
             display: none;
+            color: #8F6767;
+            background-color: #FFF2F2;
 
             .formLink {
                 margin-left: 15px;
@@ -350,13 +365,13 @@ section {
             }
 
             &.is-active {
-                margin-top: 80%;
+                position: absolute;
+                bottom: 0;
+                width: 100%;
                 display: flex;
                 align-items: center;
-                color: #8F6767;
-                padding: 10px 0;
+                height: 40px;
                 padding-inline-start: 26px;
-                background-color: #FFF2F2;
             }
         }
     }

@@ -146,16 +146,22 @@ nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-left: 272px;
   margin-bottom: 41px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 nav .list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   font-size: 16px;
   gap: 10px;
 }
@@ -166,8 +172,14 @@ nav .list li {
   padding: 0.5em 1.5em;
   border-radius: 5px;
   cursor: pointer;
+  text-wrap: none;
 }
 nav .list li:hover, nav .list li:active, nav .list li:focus {
+  background-color: #FF9393;
+  border: 1px solid #FF9393;
+  color: white;
+}
+nav .list li.selected {
   background-color: #FF9393;
   border: 1px solid #FF9393;
   color: white;
@@ -371,6 +383,8 @@ section {
 }
 .clothingItem figure .from {
   display: none;
+  color: #8F6767;
+  background-color: #FFF2F2;
 }
 .clothingItem figure .from .formLink {
   margin-left: 15px;
@@ -392,18 +406,18 @@ section {
   position: static;
 }
 .clothingItem figure .from.is-active {
-  margin-top: 80%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #8F6767;
-  padding: 10px 0;
+  height: 40px;
   -webkit-padding-start: 26px;
           padding-inline-start: 26px;
-  background-color: #FFF2F2;
 }
 
 footer {
